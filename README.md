@@ -19,3 +19,19 @@
 - Sprint 1: CRUD de produtos.
 - Sprint 2: Movimentações.
 - Sprint 3: Relatórios.
+
+**Entidades:**
+
+-   **Produto**
+    -   `id` (PK)\
+    -   `nome` (obrigatório)\
+    -   `codigo` (único, até 20 caracteres)\
+    -   `quantidade` (inteiro ≥ 0)
+-   **Movimentacao**
+    -   `id` (PK)\
+    -   `produto_id` (FK → Produto)\
+    -   `tipo` (enum: `ENTRADA` ou `SAIDA`)\
+    -   `quantidade` (inteiro \> 0)\
+    -   `data`\
+    -   **Regra:** Se `SAIDA`, não permitir
+        `quantidade > estoque atual`.
